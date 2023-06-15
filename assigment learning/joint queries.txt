@@ -1,0 +1,42 @@
+create table student(stu_id int primary key,stu_name varchar(50),stu_subj varchar(6),stu_marks int);
+create table student1(stu_id int primary key,stu_name varchar(50),stu_subj varchar(6),stu_marks int);
+select * from student;
+select * from student1;
+
+insert into student values(1,'sam','telugu',45);
+insert into student1 values(1,'sam','telugu',45);
+
+ALTER TABLE student Alter column stu_subj type varchar(10);
+ALTER TABLE student1 rename column stud_marks to stu_marks ;
+
+update student set stu_marks=48 where stu_name='sam';
+
+delete from student where stu_id=2;
+
+
+join queries:
+
+inner join (it provides common values from both the tables)
+select * from student inner join  student1 on student.stu_name=student1.stu_name;
+
+left join(can see all values from the left table and only the matching values from the right table)
+select * from student left join student1 on student.stu_name=student1.stu_name;
+
+right join(opposite to left join quries)
+select * from student right join student1 on student.stu_name=student1.stu_name;
+
+full join(can see all values from both the tables)
+select * from student full join student1 on student.stu_name=student1.stu_name;
+
+Queries related to Union and Intersect
+select  stu_id,stu_marks from student union select stu_id,stu_marks from student1 ;
+select stu_id,stu_marks from student intersect select stu_id,stu_marks from student1;
+
+ subqueries
+
+select stu_id,stu_name from student where exists (select * from student1 where stu_name='sam');
+select * from student where stu_id = any(select stu_id from student1 where stu_subj='maths');
+select * from student where stu_id > all(select stu_id from student1 where stu_marks='44');
+select * from student where stu_id = any (select stu_id from student1 where stu_marks='44');
+select * from student order by stu_name;
+select count(stu_id),stu_marks from student group by stu_marks order by count(stu_id);

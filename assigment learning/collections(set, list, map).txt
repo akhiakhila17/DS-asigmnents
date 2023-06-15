@@ -1,0 +1,24 @@
+1,    collections using List, Set,TreeMap
+
+1)list-> maintain insertion order 
+         3 types
+         ArrayList-> maintain order and based on index((travers of list)if the list in fixed ther will be no updates means use arraylist)not present
+         LinkedList-> if there are any updates or changes use LinkedList(frequent updates)not preset
+         vector->multiple threads accesing the list use vector, maintain insertion order and provide present, it acces only one thread at a time , in case of                  multi threading environment
+
+
+2)set-> it does not bother about order it removes the duplicates
+         3 types
+        Hash Set->provides it removes the duplicates, and doesnot maintain order by default
+                  allows only one null values
+                  whatever the elements you add hashset simply ignores it (even duplicates)
+ 
+
+        linked Hashset-> doesnot allows duplicates, but maintain order
+        TreeSet-> doent allow dup, but provide sorted order or decesing order.
+
+
+3) Map-> by default provide key value piar relation based on index(indexing:when you pass some key automatically you get value)
+             2 implementations
+        HashMap->provides key to value pair relationship , allow 1 null key and multiple null values,and it is not thread safe.
+        HashTable->provides key to value pair relationship , doesnot null key values,and it is thread safe.

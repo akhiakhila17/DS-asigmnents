@@ -1,0 +1,69 @@
+****************************************
+
+ 1)creating table
+
+create table employee( emp_id int ,emp_name varchar(255) int,emp_salary int ,primary key(emp_id));
+
+2) displaying all the values
+
+select * from employee;
+
+3)Inserting values to tables
+
+insert into employee values(101,'sam',45000);
+
+4)updation:
+
+update employee set emp_name='sam' where emp_id=101;
+
+5)Deletion:
+delete from employee where emp_id=101;
+
+
+6)selecting unique values
+
+select distinct emp_name from employee;
+
+7)counting unique records
+
+select count(distinct emp_name) from employee;
+
+unique value
+select emp_salary from employee where emp_id=103;
+
+8)Sorting quries:
+
+select * from employee order by emp_salary desc;
+
+9)fetching the first 2 rows from table:
+
+select * from employee limit 2;
+
+10)insert into employee values(102,'jam','20000');
+
+select * from employee order by emp_id desc limit 1;
+
+******************************************************
+
+Queries related to aggregate functions:
+
+select min(emp_salary) as minimum from employee;
+
+select max(emp_salary) as maximum from employee;
+
+select avg(emp_salary) from employee;
+
+select count(emp_id)from mployee;
+
+select sum(emp_salary) from employee;
+
+pattern based quries:
+
+select * from employee where emp_salaray between 30000 and 40000;
+SELECT * from employee where emp_salary IN (20000);
+
+select * from employee where emp_name like '_a%';
+
+select * from employee where emp_name like '%AK%';
+
+
